@@ -1,35 +1,38 @@
 # Explainable-Drug-discovery
 
 ## Project Architecture
-Drug Molecule (SMILES)
-          │
-          ▼
- Molecular Graph
-          │
-          ▼
-     Graph GNN
-          │
-          ├────────────┐
-          │            │
-          ▼            ▼
- Drug Embedding    Explanation Module
-          │        (GNNExplainer/PGExplainer)
-          │
-          ▼
-Patient Omics Data
-(Gene Expression)
-          │
-          ▼
- Multimodal Fusion
-          │
-          ▼
- Drug Response Prediction
-(IC50 / Sensitivity)
-          │
-          ▼
- Translational Medicine Layer
-(Pathway Analysis + Biomarkers)
 
+```mermaid
+flowchart TD
+
+A[Drug Molecule SMILES]
+--> B[Molecular Graph]
+
+B --> C[Graph Neural Network]
+
+C --> D[Drug Embedding]
+
+C --> E[GNNExplainer / PGExplainer]
+
+F[Patient Omics Data]
+--> G[Gene Expression Encoder]
+
+G --> H[Omics Embedding]
+
+D --> I[Multimodal Fusion]
+H --> I
+
+I --> J[Drug Response Prediction]
+
+J --> K[IC50 Prediction]
+J --> L[Sensitivity Prediction]
+
+K --> M[Translational Medicine]
+L --> M
+
+M --> N[Pathway Analysis]
+M --> O[Biomarker Discovery]
+```
 ## Project Structure
 ExplainableDrugDiscovery/
 
