@@ -34,8 +34,9 @@ M --> N[Pathway Analysis]
 M --> O[Biomarker Discovery]
 ```
 ## Project Structure
-ExplainableDrugDiscovery/
 
+```bash
+ExplainableDrugDiscovery/
 │
 ├── data/
 │   ├── drugs.csv
@@ -58,3 +59,4 @@ ExplainableDrugDiscovery/
 │   └── data_loader.py
 │
 └── requirements.txt
+```
